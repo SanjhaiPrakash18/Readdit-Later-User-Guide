@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readdit Later - User Guide</title>
+    <link rel="icon" type="image/png" href="icons/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rethink Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            background-image: radial-gradient(circle, #e9ecef 1px, rgba(0, 0, 0, 0) 2px);
+            background-size: 20px 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff4500, #ff6b35);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .guide-content {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e9ecef;
+        }
+
+        .overview {
+            background-color: #d1ecf1;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0079d3;
+            margin-bottom: 30px;
+        }
+
+        .overview p {
+            margin: 0;
+            font-size: 16px;
+            color: #0c5460;
+        }
+
+        .toc {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            margin: 30px 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: #ff4500;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: #0079d3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #ff4500;
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ff4500;
+            padding-bottom: 5px;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        h4 {
+            color: #495057;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        h5 {
+            color: #6c757d;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .feature-highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+
+        .feature-highlight h4 {
+            margin-top: 0;
+            color: #856404;
+        }
+
+        .important {
+            background-color: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+            margin: 20px 0;
+        }
+
+        .tip {
+            background-color: #d4edda;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+        }
+
+        .contact-info {
+            background-color: #d1ecf1;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0079d3;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+            color: #0c5460;
+        }
+
+        .version-info {
+            background-color: #e2e3e5;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #6c757d;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        a {
+            color: #0079d3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            background: #ff4500;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .back-link:hover {
+            background: #e03d00;
+            color: white;
+            text-decoration: none;
+        }
+
+        .effective-date {
+            color: #6c757d;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+
+        .keyboard-shortcut {
+            background-color: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9em;
+            border: 1px solid #dadce0;
+        }
+
+        .step-number {
+            background: #ff4500;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .header p {
+                font-size: 16px;
+            }
+
+            .guide-content {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .toc {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Readdit Later</h1>
+        <p>Complete User Guide</p>
+    </div>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="effective-date">
+                <strong>Version:</strong> 1.0.4<br>
+                <strong>Last Updated:</strong> August 11, 2025
+            </div>
+
+            <div class="overview">
+                <p><strong>Readdit Later</strong> is a Chrome extension that helps you save, organize, and manage your Reddit posts with ease. Unlike Reddit's built-in save feature, Readdit Later provides enhanced analytics, advanced filtering, and a beautiful interface to manage your saved content.</p>
+            </div>
+
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ul>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#using-the-extension">Using the Extension</a></li>
+                    <li><a href="#detailed-view">Detailed View</a></li>
+                    <li><a href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    <li><a href="#privacy-security">Privacy & Security</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+            </div>
+
+            <h2 id="installation">Installation</h2>
+
+            <h3>From Chrome Web Store</h3>
+            <ol>
+                <li>Visit the Chrome Web Store</li>
+                <li>Search for "Readdit Later"</li>
+                <li>Click "Add to Chrome"</li>
+                <li>Confirm the installation when prompted</li>
+            </ol>
+
+            <h3>Manual Installation (Developer Mode)</h3>
+            <ol>
+                <li>Download the extension files</li>
+                <li>Open Chrome and go to <code>chrome://extensions/</code></li>
+                <li>Enable "Developer mode" in the top right</li>
+                <li>Click "Load unpacked" and select the extension folder</li>
+                <li>The extension will appear in your toolbar</li>
+            </ol>
+
+            <h2 id="getting-started">Getting Started</h2>
+
+            <h3>First Setup</h3>
+            <ol>
+                <li><span class="step-number">1</span><strong>Click the Extension Icon:</strong> Look for the Readdit Later icon in your Chrome toolbar</li>
+                <li><span class="step-number">2</span><strong>Connect Your Reddit Account:</strong> Click "Connect Reddit Account" to authenticate</li>
+                <li><span class="step-number">3</span><strong>Grant Permissions:</strong> Allow the extension to access your Reddit saved posts</li>
+                <li><span class="step-number">4</span><strong>Initial Sync:</strong> The extension will automatically sync your existing saved posts</li>
+            </ol>
+
+            <div class="tip">
+                <strong>Authentication Process:</strong> You'll be redirected to Reddit's official OAuth page, where you'll log in with your Reddit credentials and grant the necessary permissions (read, save, history). You'll then be automatically redirected back to the extension.
+            </div>
+
+            <h2 id="features">Features</h2>
+
+            <div class="feature-highlight">
+                <h4><span class="emoji">🔥</span>Core Features</h4>
+                <ul>
+                    <li><strong>Smart Sync:</strong> Automatically syncs your Reddit saved posts</li>
+                    <li><strong>Enhanced Interface:</strong> Beautiful, organized view of your saved content</li>
+                    <li><strong>Advanced Filtering:</strong> Filter by subreddit, post type, time period, and more</li>
+                    <li><strong>Quick Actions:</strong> Save/unsave posts directly from Reddit pages</li>
+                    <li><strong>Statistics Dashboard:</strong> Track your saving habits with detailed analytics</li>
+                    <li><strong>Bulk Management:</strong> Select and manage multiple posts at once</li>
+                </ul>
+            </div>
+
+            <h3><span class="emoji">📊</span>Analytics & Stats</h3>
+            <ul>
+                <li><strong>Total Saved Posts:</strong> Complete count of all your saved content</li>
+                <li><strong>Weekly Activity:</strong> Posts saved in the last 7 days</li>
+                <li><strong>Subreddit Diversity:</strong> Number of unique subreddits in your collection</li>
+                <li><strong>Sync Status:</strong> Last sync time and status updates</li>
+            </ul>
+
+            <h3><span class="emoji">🔍</span>Advanced Filtering</h3>
+            <ul>
+                <li><strong>Search:</strong> Find posts by title or subreddit name</li>
+                <li><strong>Subreddit Filter:</strong> View posts from specific communities</li>
+                <li><strong>Post Type Filter:</strong> Links (external URLs), Images, Videos, Text Posts (self-posts)</li>
+                <li><strong>Time Period Filter:</strong> Last 24 Hours, Last Week, Last Month, Last Year, All Time</li>
+            </ul>
+
+            <h3><span class="emoji">🎨</span>Visual Enhancements</h3>
+            <ul>
+                <li><strong>On-Reddit Integration:</strong> Visual indicators show which posts you've saved</li>
+                <li><strong>Quick Action Buttons:</strong> Save/unsave directly from Reddit feeds</li>
+                <li><strong>Responsive Design:</strong> Works seamlessly on desktop and mobile</li>
+                <li><strong>Clean Interface:</strong> Modern, Reddit-inspired design</li>
+            </ul>
+
+            <h2 id="using-the-extension">Using the Extension</h2>
+
+            <h3>Popup Interface</h3>
+            <p>Click the extension icon to access the popup, which shows:</p>
+
+            <h4>Quick Stats</h4>
+            <ul>
+                <li>Total saved posts</li>
+                <li>Posts saved this week</li>
+                <li>Number of unique subreddits</li>
+            </ul>
+
+            <h4>Recent Saves</h4>
+            <ul>
+                <li>Last 3 posts you've saved</li>
+                <li>Click any post to open it on Reddit</li>
+                <li>Quick access to post details</li>
+            </ul>
+
+            <h4>Action Buttons</h4>
+            <ul>
+                <li><strong>Open Detailed View:</strong> Launch the full management interface</li>
+                <li><strong>Sync Posts Now:</strong> Manually trigger a sync with Reddit</li>
+            </ul>
+
+            <h3>On Reddit Integration</h3>
+            <p>When browsing Reddit, the extension adds:</p>
+
+            <h4>Visual Indicators</h4>
+            <ul>
+                <li><strong>"Saved in Readdit Later" badges</strong> on posts you've already saved</li>
+                <li><strong>Colored save buttons</strong> to show save status at a glance</li>
+            </ul>
+
+            <h4>Quick Actions</h4>
+            <ul>
+                <li><strong>Enhanced Save Buttons:</strong> Click to save/unsave with visual feedback</li>
+                <li><strong>Instant Feedback:</strong> Success/error messages when saving posts</li>
+                <li><strong>Real-time Updates:</strong> Interface updates immediately after actions</li>
+            </ul>
+
+            <h2 id="detailed-view">Detailed View</h2>
+
+            <h3>Accessing Detailed View</h3>
+            <ul>
+                <li>Click "Open Detailed View" in the popup</li>
+                <li>Or use the keyboard shortcut <span class="keyboard-shortcut">Ctrl/Cmd + R</span> while on Reddit</li>
+            </ul>
+
+            <h3>Main Interface</h3>
+
+            <h4>Left Sidebar - Statistics</h4>
+            <ul>
+                <li><strong>Real-time Stats:</strong> Updated counts and metrics</li>
+                <li><strong>Usage Analytics:</strong> Track your saving patterns over time</li>
+                <li><strong>Sync Status:</strong> Last sync time and any error messages</li>
+            </ul>
+
+            <h4>Main Area - Post Management</h4>
+
+            <h5>Filtering Controls</h5>
+            <ul>
+                <li><strong>Select All Checkbox:</strong> Quickly select all visible posts</li>
+                <li><strong>Search Bar:</strong> Real-time search through post titles and content</li>
+                <li><strong>Filter Dropdowns:</strong> Subreddit selection, Post type filtering, Time period selection</li>
+                <li><strong>Clear Filters:</strong> Reset all filters to default state</li>
+            </ul>
+
+            <h5>Sorting Options</h5>
+            <ul>
+                <li><strong>Newest First</strong> (default)</li>
+                <li><strong>Oldest First</strong></li>
+                <li><strong>Title A-Z / Z-A</strong></li>
+                <li><strong>Subreddit A-Z</strong></li>
+                <li><strong>Highest Score</strong></li>
+            </ul>
+
+            <h5>Post Grid</h5>
+            <ul>
+                <li><strong>Card Layout:</strong> Clean cards showing post information</li>
+                <li><strong>Post Details:</strong> Title, subreddit, creation time, score, comments</li>
+                <li><strong>Quick Actions:</strong> Open original post, Remove from saved posts</li>
+                <li><strong>Bulk Selection:</strong> Checkboxes for mass actions</li>
+            </ul>
+
+            <h5>Pagination</h5>
+            <ul>
+                <li><strong>12 posts per page</strong> (optimized for performance)</li>
+                <li><strong>Navigation controls:</strong> Previous/Next buttons</li>
+                <li><strong>Page indicators:</strong> Current page and total pages</li>
+            </ul>
+
+            <h4>Header Actions</h4>
+            <ul>
+                <li><strong>Delete Selected:</strong> Remove multiple posts at once</li>
+                <li><strong>Refresh:</strong> Manual sync trigger</li>
+                <li><strong>Logout:</strong> Disconnect Reddit account</li>
+            </ul>
+
+            <h2 id="keyboard-shortcuts">Keyboard Shortcuts</h2>
+
+            <h3>Global Shortcuts</h3>
+            <ul>
+                <li><span class="keyboard-shortcut">Ctrl/Cmd + R</span>: Open Readdit Later detailed view (when on Reddit)</li>
+            </ul>
+
+            <h3>Reddit Page Shortcuts</h3>
+            <ul>
+                <li><span class="keyboard-shortcut">Alt + S</span>: Quick save currently hovered post</li>
+            </ul>
+
+            <h3>Detailed View Shortcuts</h3>
+            <ul>
+                <li><span class="keyboard-shortcut">Ctrl/Cmd + F</span>: Focus search box</li>
+                <li><span class="keyboard-shortcut">Escape</span>: Clear current selection</li>
+                <li><span class="keyboard-shortcut">Delete</span>: Remove selected posts</li>
+            </ul>
+
+            <h2 id="troubleshooting">Troubleshooting</h2>
+
+            <h3>Common Issues</h3>
+
+            <h4>Authentication Problems</h4>
+            <div class="important">
+                <strong>Problem:</strong> Can't connect to Reddit account<br>
+                <strong>Solutions:</strong>
+                <ul>
+                    <li>Clear browser cookies for Reddit</li>
+                    <li>Try incognito/private browsing mode</li>
+                    <li>Ensure popup blockers aren't preventing OAuth</li>
+                    <li>Check if Reddit is accessible</li>
+                </ul>
+            </div>
+
+            <div class="important">
+                <strong>Problem:</strong> "Access Forbidden" error<br>
+                <strong>Solution:</strong> Your Reddit app may need proper scopes. The extension requires <code>read</code>, <code>save</code>, and <code>history</code> permissions.
+            </div>
+
+            <h4>Sync Issues</h4>
+            <div class="important">
+                <strong>Problem:</strong> Posts not syncing<br>
+                <strong>Solutions:</strong>
+                <ul>
+                    <li>Click "Sync Posts Now" in the popup</li>
+                    <li>Check internet connection</li>
+                    <li>Verify Reddit account is still connected</li>
+                    <li>Try logging out and reconnecting</li>
+                </ul>
+            </div>
+
+            <div class="important">
+                <strong>Problem:</strong> Some posts missing<br>
+                <strong>Explanation:</strong> Reddit's API has limitations. Very old posts (1000+ items back) may not be accessible.
+            </div>
+
+            <h4>Performance Issues</h4>
+            <div class="important">
+                <strong>Problem:</strong> Extension running slowly<br>
+                <strong>Solutions:</strong>
+                <ul>
+                    <li>Clear extension storage: Chrome Settings > Extensions > Readdit Later > Storage</li>
+                    <li>Reduce number of saved posts by cleaning up old ones</li>
+                    <li>Restart Chrome browser</li>
+                </ul>
+            </div>
+
+            <h3>Error Messages</h3>
+            <ul>
+                <li><strong>"Background script timeout":</strong> Communication issue between extension components. Fix: Reload the extension or restart Chrome</li>
+                <li><strong>"Token expired":</strong> Reddit authentication expired. Fix: Logout and reconnect your account</li>
+                <li><strong>"No authorization code":</strong> OAuth flow interrupted. Fix: Clear browser cache and try authentication again</li>
+            </ul>
+
+            <h2 id="privacy-security">Privacy & Security</h2>
+
+            <h3>Data Handling</h3>
+            <ul>
+                <li><strong>Local Storage Only:</strong> All your data stays on your device</li>
+                <li><strong>No Server Storage:</strong> We don't store your Reddit data on external servers</li>
+                <li><strong>Secure Authentication:</strong> Uses Reddit's official OAuth 2.0 system</li>
+                <li><strong>Minimal Permissions:</strong> Only requests necessary Reddit API access</li>
+            </ul>
+
+            <h3>Reddit API Usage</h3>
+            <ul>
+                <li><strong>Read-Only Access:</strong> Can only read your saved posts, not modify your account</li>
+                <li><strong>Rate Limited:</strong> Follows Reddit's API guidelines to prevent abuse</li>
+                <li><strong>Secure Tokens:</strong> Authentication tokens are encrypted and stored locally</li>
+            </ul>
+
+            <h3>What We Access</h3>
+            <div class="tip">
+                <strong>✅ We Access:</strong>
+                <ul>
+                    <li>Your saved Reddit posts</li>
+                    <li>Basic profile info (username only)</li>
+                    <li>Post metadata (title, subreddit, score, etc.)</li>
+                </ul>
+                <strong>❌ We DON'T Access:</strong>
+                <ul>
+                    <li>Your private messages</li>
+                    <li>Your posting history</li>
+                    <li>Other users' private information</li>
+                </ul>
+            </div>
+
+            <h2 id="support">Support</h2>
+
+            <div class="contact-info">
+                <h3>Getting Help</h3>
+                <p>
+                    <strong>Email Support:</strong> <a href="mailto:sanjhaiprakash18@gmail.com">sanjhaiprakash18@gmail.com</a><br>
+                    <strong>Privacy Policy:</strong> <a href="https://sanjhaiprakash18.github.io/Readdit-Later/">View our privacy policy</a>
+                </p>
+                <p>We love hearing from users! Contact us with feature requests, bug reports, general feedback, and improvement suggestions.</p>
+            </div>
+
+            <div class="version-info">
+                <strong>Version Information</strong><br>
+                <strong>Current Version:</strong> 1.0.4<br>
+                <strong>Last Updated:</strong> August 2025<br>
+                <strong>Compatibility:</strong> Chrome 88+ (Manifest V3)
+            </div>
+
+            <h2>Tips for Best Experience</h2>
+
+            <h3>Optimization Tips</h3>
+            <ol>
+                <li><strong>Regular Cleanup:</strong> Periodically remove posts you no longer need</li>
+                <li><strong>Use Filters:</strong> Take advantage of filtering to find specific content quickly</li>
+                <li><strong>Sync Regularly:</strong> Enable auto-sync or manually sync daily for best results</li>
+                <li><strong>Organize by Subreddit:</strong> Use subreddit filters to categorize your interests</li>
+            </ol>
+
+            <h3>Power User Features</h3>
+            <ol>
+                <li><strong>Bulk Actions:</strong> Select multiple posts for quick management</li>
+                <li><strong>Keyboard Navigation:</strong> Use shortcuts for faster navigation</li>
+                <li><strong>Time-based Filters:</strong> Review older saves to clean up your collection</li>
+                <li><strong>Statistics Tracking:</strong> Monitor your saving habits to optimize usage</li>
+            </ol>
+
+            <h3>Integration with Reddit</h3>
+            <ol>
+                <li><strong>Visual Cues:</strong> Look for "Saved in Readdit Later" indicators while browsing</li>
+                <li><strong>Quick Save:</strong> Use the enhanced save buttons for instant feedback</li>
+                <li><strong>Status Updates:</strong> Watch for success/error messages when saving posts</li>
+            </ol>
+
+            <h2>Technical Requirements</h2>
+
+            <h3>Browser Requirements</h3>
+            <ul>
+                <li><strong>Chrome:</strong> Version 88 or higher</li>
+                <li><strong>Chromium-based:</strong> Edge, Brave, Opera (recent versions)</li>
+                <li><strong>Extensions API:</strong> Manifest V3 support required</li>
+            </ul>
+
+            <h3>Reddit Account Requirements</h3>
+            <ul>
+                <li><strong>Active Reddit Account:</strong> Must be logged into Reddit</li>
+                <li><strong>API Access:</strong> Account must allow third-party app connections</li>
+                <li><strong>Saved Posts:</strong> Works with Reddit's native save feature</li>
+            </ul>
+
+            <h3>Network Requirements</h3>
+            <ul>
+                <li><strong>Internet Connection:</strong> Required for initial sync and periodic updates</li>
+                <li><strong>Reddit API Access:</strong> Must be able to reach oauth.reddit.com and api.reddit.com</li>
+                <li><strong>Port Access:</strong> Standard HTTPS (443) access required</li>
+            </ul>
+
+            <h2>Changelog</h2>
+
+            <h3>Version 1.0.4</h3>
+            <ul>
+                <li>Improved Reddit API integration</li>
+                <li>Enhanced error handling</li>
+                <li>Better sync reliability</li>
+                <li>UI/UX improvements</li>
+            </ul>
+
+            <h3>Version 1.0.3</h3>
+            <ul>
+                <li>Fixed authentication flow</li>
+                <li>Added bulk delete functionality</li>
+                <li>Improved filtering performance</li>
+                <li>Enhanced visual feedback</li>
+            </ul>
+
+            <div class="important">
+                <strong>Remember:</strong> You can always revoke the extension's access to your Reddit account through 
+                <a href="https://www.reddit.com/prefs/apps/" target="_blank">Reddit's authorized applications page</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>
+            © 2025 Readdit Later. This extension is not affiliated with Reddit, Inc.<br>
+            Reddit is a trademark of Reddit, Inc.
+        </p>
+    </div>
+</body>
+</html>
